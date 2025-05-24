@@ -64,8 +64,17 @@ def login():
 
 # === Load Model ===
 device = torch.device("cpu")
+print("Creating model...")
 model = timm.create_model('swin_tiny_patch4_window7_224', pretrained=False, num_classes=2)
-model.load_state_dict(torch.load(MODEL_PATH, map_location=device))
+
+try:
+    print("Loading model weights...")
+    model.load_state_dict(torch.load(MODEL_PATH, map_location=device))
+    print("✅ Model loaded successfully!")
+except Exception as e:
+    print("❌ Error loading model:")
+    print(e)
+
 model.eval()
 
 preprocess = transforms.Compose([
