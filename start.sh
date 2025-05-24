@@ -1,2 +1,9 @@
 #!/bin/bash
-gunicorn app:app
+
+# Install model using gdown
+echo "Downloading model..."
+gdown "$MODEL_URL" -O swin_transformer_trained.pth
+
+# Start Flask app
+echo "Starting Flask server..."
+python app.py
