@@ -1,9 +1,9 @@
 services:
   - type: web
-    name: flask-backend
-    env: python
+    name: anomaly-backend
+    runtime: python
     buildCommand: ""
-    startCommand: gunicorn app:app
+    startCommand: ./start.sh
     envVars:
-      - key: FLASK_ENV
-        value: production
+      - key: MODEL_URL
+        value: https://drive.google.com/uc?id=1mpmYQdydILZLM82MRHB5WCa3oc_E7mZK
