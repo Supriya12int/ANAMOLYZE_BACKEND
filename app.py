@@ -17,9 +17,9 @@ MODEL_PATH = "swin_transformer_trained.pth"
 GOOGLE_DRIVE_FILE_ID = "1mpmYQdydILZLM82MRHB5WCa3oc_E7mZK"
 
 # Automatically download the model from Google Drive if not present
-if not os.path.exists(MODEL_PATH):
-    print("Model not found. Downloading from Google Drive...")
-    gdown.download(f"https://drive.google.com/uc?id={GOOGLE_DRIVE_FILE_ID}", MODEL_PATH, quiet=False)
+# if not os.path.exists(MODEL_PATH):
+#     print("Model not found. Downloading from Google Drive...")
+#     gdown.download(f"https://drive.google.com/uc?id={GOOGLE_DRIVE_FILE_ID}", MODEL_PATH, quiet=False)
 
 # User DB
 if not os.path.exists(USER_DB):
