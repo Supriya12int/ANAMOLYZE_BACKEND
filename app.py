@@ -69,7 +69,7 @@ model = timm.create_model('swin_tiny_patch4_window7_224', pretrained=False, num_
 
 try:
     print("Loading model weights...")
-    model.load_state_dict(torch.load(MODEL_PATH, map_location=device))
+    model.load_state_dict(torch.load(MODEL_PATH, map_location=device,weights_only=False))
     print("✅ Model loaded successfully!")
 except Exception as e:
     print("❌ Error loading model:")
